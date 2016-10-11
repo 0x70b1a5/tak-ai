@@ -13,9 +13,21 @@ Special thanks to the [LOVE game engine team](love2d.org), in tandem with [vrld'
 |works|totally|oops|
 
 
-**Linux/Mac Install:** 
+**Unix Install:** 
 ```
-curl https://0x70b1a5.github.io/tak-ai-ghpage/ | sh
+git clone https://github.com/torch/distro.git ~/torch --recursive;
+cd ~/torch; bash install-deps;
+./install.sh;
+apt-get -y install love lua5.2 luarocks;
+apt-get update && apt-get upgrade -y
+luarocks install utf8;
+cd;
+git clone https://github.com/0x70b1a5/tak-ai.git TakAI --recursive; cd TakAI
+git clone https://github.com/vrld/SUIT;
+git fetch;
+git remote add jach https://github.com/jachiam/tak-ai.git; git merge jach/master
+echo "love ." >> 'PLAY_TAKAI.sh';
+love .; 
 ```
 
 **Windows Users:** Sorry, but until [torch](torch.ch) makes their library available for Windows, you're going to have to sit tight. Alternatively, you can fight the AI using a prettier interface on [playtak](playtak.com). You can also switch to [Ubuntu](ubuntu.com/download).
